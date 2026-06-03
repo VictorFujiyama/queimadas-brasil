@@ -1,0 +1,11 @@
+node_modules
+.next
+.env
+.env.local
+.env.*.local
+next-env.d.ts
+
+# sobras do pipeline local (nao usado em producao)
+data/
+*.log
+.DS_Store
