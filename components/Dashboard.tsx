@@ -267,6 +267,18 @@ export default function Dashboard() {
                   </div>
                 </Card>
 
+                <Card titulo="Distribuição geográfica por estado" hint="clique num estado">
+                  <div className="h-[300px] rounded-lg overflow-hidden border border-slate-100 bg-white">
+                    <MapaFocos ufTotais={data.ufTotais} selUf={filtros.uf}
+                      onSelect={(uf: string) => toggle("uf", uf)} />
+                  </div>
+                  <div className="flex items-center gap-2 mt-3 text-[11px] text-slate-500">
+                    <span>menos focos</span>
+                    <span className="flex-1 h-2 rounded-full" style={{ background: "linear-gradient(90deg,#fde68a,#fbbf24,#f97316,#ef4444,#b91c1c,#7f1d1d)" }} />
+                    <span>mais focos</span>
+                  </div>
+                </Card>
+
                 <Card titulo="Comparação entre regiões por ano">
                   <ResponsiveContainer width="100%" height={300}>
                     <LineChart data={regiaoAnoPivot} margin={{ top: 6, right: 12, left: -8, bottom: 0 }}>
@@ -281,18 +293,6 @@ export default function Dashboard() {
                       ))}
                     </LineChart>
                   </ResponsiveContainer>
-                </Card>
-
-                <Card titulo="Distribuição geográfica por estado" hint="clique num estado">
-                  <div className="h-[300px] rounded-lg overflow-hidden border border-slate-100 bg-white">
-                    <MapaFocos ufTotais={data.ufTotais} selUf={filtros.uf}
-                      onSelect={(uf: string) => toggle("uf", uf)} />
-                  </div>
-                  <div className="flex items-center gap-2 mt-3 text-[11px] text-slate-500">
-                    <span>menos focos</span>
-                    <span className="flex-1 h-2 rounded-full" style={{ background: "linear-gradient(90deg,#fde68a,#fbbf24,#f97316,#ef4444,#b91c1c,#7f1d1d)" }} />
-                    <span>mais focos</span>
-                  </div>
                 </Card>
 
                 <Card titulo="Top 10 municípios">
